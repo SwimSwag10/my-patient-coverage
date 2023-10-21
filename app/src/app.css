@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 100;
+  letter-spacing: 0.5px;
+}
+
+::-webkit-scrollbar {
+  width: .75em;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+  margin-top: 80px;
+  border: 3px solid white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(rgb(212 212 212), rgb(212 212 212));
+  border: 3px solid white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(rgb(163 163 163), rgb(163 163 163));
+}
+
+@supports (scrollbar-color: white lightGray) {
+  * {
+    scrollbar-color: white lightGray ;
+    scrollbar-width: thin;
+  }
+}

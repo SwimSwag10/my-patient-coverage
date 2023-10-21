@@ -1,0 +1,112 @@
+{
+  "paymentHeader": {
+      "address": {
+          "addressLine1": "124 N Front St",
+          "state": "OH",
+          "zipCode": "458852392",
+          "city": "Saint Marys",
+          "country": "US",
+          "county": "011"
+      },
+      "bankAccount": {
+          "accountName": "Delta Dental Ohio General",
+          "accountNumber": "000082612464",
+          "accountType": "B",
+          "bankName": "FIFTH THIRD BANK",
+          "routingNumber": "042101190",
+          "clientDedicated": false
+      },
+      "garnishmentAmt": null,
+      "netPaymentAmt": 1184.6,
+      "overpaymentAmt": null,
+      "paymentIssueDate": "2023-06-29T04:00:00.000+00:00",
+      "paymentNumber": "9604239397",
+      "paymentStatus": null,
+      "paymentType": null,
+      "payeeId": "341923388",
+      "payeeName": "FLEAGLE FAMILY DENTISTRY INC",
+      "netPaymentAmtWords": "ONE THOUSAND ONE HUNDRED EIGHTY FOUR DOLLARS AND SIXTY CENTS"
+  },
+  "paymentDetails": [
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkNGOTFBNjdGMUUyOEI2NjRDMjg4QTYzQ0E5MDQ5NURBNzEwNjg=",
+          "memberNumber": "xxxxx3088",
+          "netPaymentAmount": 83.0,
+          "patientname": "EMILY HOWELL",
+          "planPaymentAmount": 83.0,
+          "claimNumber": "2306292659379"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkNGOTFCNjgyODAxODY3REYxNEIyNDRCMjQ4QjJCOUQ5MkE1REQ=",
+          "memberNumber": "xxxxx2314",
+          "netPaymentAmount": 126.0,
+          "patientname": "MICHAEL BURD",
+          "planPaymentAmount": 126.0,
+          "claimNumber": "2306292659377"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkZGRTE4NEVGQzJCMTRDN0VFREMzRTk1RjFDQTkyOEIxQjZCMkQ=",
+          "memberNumber": "xxxxx5118",
+          "netPaymentAmount": 303.2,
+          "patientname": "MARK FLEAGLE",
+          "planPaymentAmount": 303.2,
+          "claimNumber": "2306292659358"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkZGMTFBM0RGRUE2OTEyOUEzMjBGRjNFQjZDNjE2MkVENUEzMzA=",
+          "memberNumber": "xxxxx1229",
+          "netPaymentAmount": 87.0,
+          "patientname": "Joseph Rammel",
+          "planPaymentAmount": 87.0,
+          "claimNumber": "2306292659351"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkNGODFGNUNBQzgwQTlBRTY3NkJCNDA2ODc4NDYwQThGMUM2MDA=",
+          "memberNumber": "xxxxx3088",
+          "netPaymentAmount": 87.0,
+          "patientname": "Kara Howell",
+          "planPaymentAmount": 87.0,
+          "claimNumber": "2306292659384"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkNGOTE3Mjk4MDk1REFDRUVGRDhFREFGRUMzREI2OUNFOURFQTE=",
+          "memberNumber": "xxxxx0509",
+          "netPaymentAmount": 94.4,
+          "patientname": "ERIC WAGNER",
+          "planPaymentAmount": 94.4,
+          "claimNumber": "2306292659381"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkNGOTE5Nzc5QkM3OUM0QThCOEM3ODFBRjhCREVFMURGOUNFQjc=",
+          "memberNumber": "xxxxx3088",
+          "netPaymentAmount": 83.0,
+          "patientname": "ASHLEY HOWELL",
+          "planPaymentAmount": 83.0,
+          "claimNumber": "2306292659380"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkZGMDFFMDk3QTI3QkVGQTM1MDA2RjczMTVDOTVEMUJCNkMwRUQ=",
+          "memberNumber": "xxxxx1222",
+          "netPaymentAmount": 87.0,
+          "patientname": "COURTNEY FIELDS",
+          "planPaymentAmount": 87.0,
+          "claimNumber": "2306292659367"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkZGMTFCMzIyNzQ1OUMzMjFFNDM1MTE2NThERDc0RUVFMDE2ODU=",
+          "memberNumber": "xxxxx2372",
+          "netPaymentAmount": 118.0,
+          "patientname": "ALEXIS HUBER",
+          "planPaymentAmount": 118.0,
+          "claimNumber": "2306292659365"
+      },
+      {
+          "claimId": "NjAyREUxRUJFMTVERjMxQjk5QjA4MDkxMkZGMTFGMEQ0MEM5QTg1Q0VCQ0RFOUI1RTBCMEZGRUUzNkMwNTE=",
+          "memberNumber": "xxxxx5626",
+          "netPaymentAmount": 116.0,
+          "patientname": "AMBER KOCH",
+          "planPaymentAmount": 116.0,
+          "claimNumber": "2306292659361"
+      }
+  ]
+}
