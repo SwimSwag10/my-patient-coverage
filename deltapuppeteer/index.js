@@ -98,7 +98,7 @@ function sleep(ms) {
         headers: usefulRequestHeaders,
     })
 
-    const userContext = await fetch("https://www.dentalofficetoolkit.com/api/dot-gateway/v1/usercontext?userId=JDFleagle", {
+    const userContext = await fetch("https://www.dentalofficetoolkit.com/api/dot-gateway/v1/usercontext?userId={DELTA_USERNAME}}", {
         method: 'GET',
         headers: usefulRequestHeaders,
     })
