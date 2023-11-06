@@ -132,7 +132,7 @@ This installation assumes you have already configured the AWS CLI with an IAM us
   ```sh
   npm install
   ```
-4. Create the 'buid' directory for the AWS S3 bucket to store the frontend statically.
+4. Create the 'build' directory for the AWS S3 bucket to store the frontend statically.
   ```sh
   npm run build
   ```
@@ -146,7 +146,7 @@ This installation assumes you have already configured the AWS CLI with an IAM us
   ```
 7. Deploy the CDK stack to your AWS account
   ```sh
-  cdk deploy
+  cdk deploy MyPatientCoverage MPCDynamoStack
   ```
 
 <b>For developming locally</b> you will want to make sure you have a username and password set up (or any other login credential) for <b>EACH</b> of the insurance websites. Below, on step two is the example for Delta Dental.

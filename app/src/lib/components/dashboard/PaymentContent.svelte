@@ -10,6 +10,13 @@
 	import { deltaDental } from "$lib/utils/stores.js";
 	import { claim_comment } from 'svelte/internal';
 
+  /*
+  *
+  * TODO: We will have to have a section inside of here that will call each of the payer's endpoints. Do we want to have the endpoints called
+  * when the user signs in? So, when we OnMount /dashboard we also call the /payments and /claims after we /login?
+  * 
+  */ 
+
   let open = false;
   let elements;
   let currentPage = 1;
