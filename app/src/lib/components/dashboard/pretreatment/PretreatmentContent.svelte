@@ -21,7 +21,7 @@
     </div>
     {#if globalPatient }
       <div>
-        <h2>Okaygebusiness</h2>
+        <!-- <h2>Okaygebusiness</h2> -->
       </div>
     {/if}
   </div>

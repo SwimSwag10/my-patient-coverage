@@ -31,7 +31,6 @@ export class MPCDynamoStack extends cdk.Stack {
       projectionType: dynamodb.ProjectionType.INCLUDE,
     });
 
-    // 👇 This is basically a console log after deployment? I think it's used to connect this stack with the other stack.
     new cdk.CfnOutput(this, 'MPCDynamoTable', {
       value: this.MPCTable.tableName,
       exportName: 'MPCDynamoTableName',

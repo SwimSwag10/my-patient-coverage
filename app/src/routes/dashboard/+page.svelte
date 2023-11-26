@@ -28,13 +28,6 @@
     //   $deltaDental.authHeaders = response.body.authHeaders
     // })
   })
-
-  /*
-  *
-  * TODO: add an api fetch request to the inspirational quotes generator.
-  * We want to also make sure to pass in the response of that api request inside of a component variable to DashboardContent.
-  * 
-  */
 </script>
 
 <Header />

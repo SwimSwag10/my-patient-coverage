@@ -29,13 +29,14 @@
   }
 
   async function submit() {
+    // this code is kinda like storing user creds in a cookie.
     $deltaDental.credentials = await encryptData(JSON.stringify({deltaUsername, deltaPassword}))
     goto("/dashboard")
   }
 </script>
 
 
-<form class="bg-white" on:submit={submit, createUser}>
+<form class="bg-white" on:submit={createUser, submit}>
   <div in:fly="{{ x: -50, duration: 200, delay: 300 }}" out:fly="{{ x: -50, duration: 200 }}" class="fixed inset-y-0 left-0 flex items-center justify-center mb-4">
     <a href="/">
       <svg width="15" height="22" viewBox="0 0 15 22" fill="none" xmlns="http://www.w3.org/2000/svg" class="ml-4 fill-white">

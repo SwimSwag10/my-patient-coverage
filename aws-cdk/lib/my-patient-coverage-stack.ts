@@ -156,6 +156,7 @@ export class MyPatientCoverage extends cdk.Stack {
       code: lambda.Code.fromAsset(path.join(__dirname, "/../src/signup")),
       layers: [MPCLayer],
       environment: {
+        TABLE_NAME: MPCDynamoTable.tableName,
         REGION: cdk.Stack.of(this).region,
         AVAILABILITY_ZONES: JSON.stringify(
           cdk.Stack.of(this).availabilityZones

@@ -1,13 +1,14 @@
 const AWS = require("aws-sdk")
 const crypto = require("crypto")
-
 const dynamodb = new AWS.DynamoDB.DocumentClient()
 
+const TABLE_NAME = process.env.TABLE_NAME || '';
+
 async function main(event) {
-  const body = event.body
-  // ❔ Do we want the user to have a username, or just email and password?
+  const body = JSON.parse(event.body);
+  
   if (!body.password || !body.email) {
-    console.log(body)
+    console.log("Body:", body)
     const error = new Error('Some Credentials Missing')
     console.log('Error', error)
     return { status: false, message: 'Some Credentials Missing', error: error }
@@ -20,7 +21,7 @@ async function main(event) {
 
   /*
   *
-  * TODO: add the email to an item with the "pk." We don't need to add any other GSI.
+  * TODO: Change the transactwrite items to something more readable that can fit into one non-transaction put req.
   * 
   */
 
@@ -30,7 +31,7 @@ async function main(event) {
         // 👇 this is "GET user Where userId"
         Put: {
           // ❔ are each of the these "Items" rows in the table?
-          TableName: process.env.tableName,
+          TableName: TABLE_NAME,
           Item: {
             pk: `USER#${userId}`,
             sk: "ACCOUNT",
@@ -44,12 +45,10 @@ async function main(event) {
       },
       {
         Put: {
-          TableName: process.env.tableName,
-          // 👇 this is "GET user Where username"
+          TableName: TABLE_NAME,
           Item: {
             pk: `USERNAME`,
             sk: body.username,
-            // this makes it so that everytime the gsi is updated 
             "gsi1-pk": `USER#${userId}`,
             "gsi1-sk": "USERNAME",
             createdAt: currentTime,
@@ -60,7 +59,7 @@ async function main(event) {
       {
         Put: {
           // 👇 this is "GET user Where email"
-          TableName: process.env.tableName,
+          TableName: TABLE_NAME,
           Item: {
             pk: `EMAIL`,
             sk: body.email,
@@ -74,9 +73,16 @@ async function main(event) {
     ]
   }
 
+  const serializedTransactionRequest = JSON.stringify(params);
+  const dataSizeInBytes = Buffer.byteLength(serializedTransactionRequest, 'utf8');
+  console.log(`Size of transactWrite request data: ${dataSizeInBytes} bytes`);
+
+  console.log("After the params were created! Params:", params)
+
   try {
     // ❔ Why are we using transactWrite vs put?
     const data = await dynamodb.transactWrite(params).promise()
+    console.log("Transactwrite data:", data)
     return { status: true, message: 'Data inserted successfully', data: data }
   } catch (error) {
     console.log('Error', error)
