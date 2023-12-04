@@ -8,17 +8,25 @@
   import arrowLeft from '$lib/assets/icons/arrowLeft.svg';
 
   
-  let MPCemail = ""
-  let MPCpassword = ""
+  let MPCName = ""
+  let MPCEmail = ""
+  let MPCPassword = ""
   let deltaUsername = ""
   let deltaPassword = ""
+
+  /*
+  *
+  * TODO: Verify that the input fields abide by criteria befoer api is sent.
+  * 
+  */
 
   async function createUser() {
     let response = await api(
       "/signup", "POST", 
       {
-        email: MPCemail, 
-        password: MPCpassword, 
+        username: MPCName,
+        email: MPCEmail, 
+        password: MPCPassword, 
         deltaUsername: deltaUsername, 
         deltaPassword: deltaPassword
       }
@@ -54,8 +62,9 @@
       <div in:fly="{{ x: -50, duration: 200, delay: 300 }}" out:fly="{{ x: -50, duration: 200 }}" class="flex flex-col justify-center items-center gap-2 w-1/3 bg-black">
         <h2 class="font-bold text-3xl text-white">my-patient-coverage</h2>
         <p class="text-xs md:text-base text-white">create your account</p>
-        <input bind:value={MPCemail} type="text" placeholder="Email" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
-        <input bind:value={MPCpassword} type="text" placeholder="Password" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
+        <input bind:value={MPCName} type="text" placeholder="First Name" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
+        <input bind:value={MPCEmail} type="text" placeholder="Email" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
+        <input bind:value={MPCPassword} type="text" placeholder="Password" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
         <input type="text" placeholder="Confirm Password" required class="flex px-3 py-2 md:px-4 md:py-3 border-2 border-black rounded-lg font-medium placeholder:font-normal font-mono [box-shadow:_0_4px_0_rgb(0_0_0_/_20%)]" />
       </div>
       <!-- availity signup -->

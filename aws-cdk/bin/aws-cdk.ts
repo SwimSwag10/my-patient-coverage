@@ -2,12 +2,8 @@
 import 'source-map-support/register'
 import * as cdk from 'aws-cdk-lib'
 import { MyPatientCoverage } from '../lib/my-patient-coverage-stack'
-import { MPCDynamoStack } from '../lib/mpc-dynamo-stack'
 
 const app = new cdk.App()
-new MPCDynamoStack(app, 'MPCDynamoTable', {
-  env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-})
 new MyPatientCoverage(app, 'MyPatientCoverage', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
@@ -23,10 +19,3 @@ new MyPatientCoverage(app, 'MyPatientCoverage', {
 
   /* For more information, see https://docs.aws.amazon.com/cdk/latest/guide/environments.html */
 })
-
-// new MPCDynamoStack(app, 'TestMPCDynamoTable', {
-//   env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-// })
-// new MyPatientCoverage(app, 'TestMyPatientCoverage', {
-//   env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
-// })

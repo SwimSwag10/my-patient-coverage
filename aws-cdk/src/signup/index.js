@@ -6,9 +6,8 @@ const TABLE_NAME = process.env.TABLE_NAME || '';
 
 async function main(event) {
   const body = JSON.parse(event.body);
-  
-  if (!body.password || !body.email) {
-    console.log("Body:", body)
+
+  if (!body.password || !body.email || !body.username) {
     const error = new Error('Some Credentials Missing')
     console.log('Error', error)
     return { status: false, message: 'Some Credentials Missing', error: error }
@@ -30,11 +29,10 @@ async function main(event) {
       {
         // 👇 this is "GET user Where userId"
         Put: {
-          // ❔ are each of the these "Items" rows in the table?
           TableName: TABLE_NAME,
           Item: {
-            pk: `USER#${userId}`,
-            sk: "ACCOUNT",
+            username: `${body.username}#${userId}`,
+            email: `${body.email}`,
             password: hash,
             salt: salt,
             verified: false,
@@ -42,34 +40,35 @@ async function main(event) {
             updatedAt: currentTime
           }
         }
-      },
-      {
-        Put: {
-          TableName: TABLE_NAME,
-          Item: {
-            pk: `USERNAME`,
-            sk: body.username,
-            "gsi1-pk": `USER#${userId}`,
-            "gsi1-sk": "USERNAME",
-            createdAt: currentTime,
-            updatedAt: currentTime
-          }
-        }
-      },
-      {
-        Put: {
-          // 👇 this is "GET user Where email"
-          TableName: TABLE_NAME,
-          Item: {
-            pk: `EMAIL`,
-            sk: body.email,
-            "gsi1-pk": `USER#${userId}`,
-            "gsi1-sk": "EMAIL",
-            createdAt: currentTime,
-            updatedAt: currentTime
-          }
-        }
       }
+      // // this is returning a validation error. Why is this Put section returning a validation error?
+      // {
+      //   Put: {
+      //     TableName: TABLE_NAME,
+      //     Item: {
+      //       pk: `USERNAME`,
+      //       sk: body.username,
+      //       "gsi1-pk": `USER#${userId}`,
+      //       "gsi1-sk": "USERNAME",
+      //       createdAt: currentTime,
+      //       updatedAt: currentTime
+      //     }
+      //   }
+      // },
+      // {
+      //   Put: {
+      //     // 👇 this is "GET user Where email"
+      //     TableName: TABLE_NAME,
+      //     Item: {
+      //       pk: `EMAIL`,
+      //       sk: body.email,
+      //       "gsi1-pk": `USER#${userId}`,
+      //       "gsi1-sk": "EMAIL",
+      //       createdAt: currentTime,
+      //       updatedAt: currentTime
+      //     }
+      //   }
+      // }
     ]
   }
 

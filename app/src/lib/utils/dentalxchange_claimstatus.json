@@ -1,0 +1,77 @@
+{
+  "providerClaimId": "65284845",
+  "writeEdi": false,
+  "writeXml": false
+}
+// RESPONSE:
+{
+  "status": {
+      "code": 0,
+      "description": "Operation Successful"
+  },
+  "messages": [],
+  "transactionId": 45360937,
+  "response": {
+      "dxcClaimId": "6236346",
+      "claimStatus": {
+          "submittedAmount": 225,
+          "paidAmount": 0,
+          "statusDate": "2022-12-28T19:59:34.827-08:00",
+          "message": "",
+          "categoryCodes": [
+              {
+                  "code": "A0",
+                  "statusCode": "16"
+              }
+          ]
+      },
+      "dxcStatus": {
+          "claimErrors": [],
+          "claimItemErrors": []
+      },
+      "attachmentStatus": {
+          "hasAttachment": true,
+          "dxcAttachmentId": "DXC00010126",
+          "viewedDate": "",
+          "status": 60,
+          "description": "Sent To Partner"
+      },
+      "claimItems": [
+          {
+              "quantity": 1,
+              "startDate": "2021-01-01T00:00:00-08:00",
+              "endDate": "2021-01-01T00:00:00-08:00",
+              "itemStatus": {
+                  "submittedAmount": 5,
+                  "paidAmount": 0,
+                  "statusDate": "2022-12-28T19:59:34.827-08:00",
+                  "categoryCodes": [
+                      {
+                          "code": "A0",
+                          "statusCode": "16"
+                      }
+                  ]
+              }
+          },
+          {
+              "quantity": 1,
+              "startDate": "2021-01-01T00:00:00-08:00",
+              "endDate": "2021-01-01T00:00:00-08:00",
+              "itemStatus": {
+                  "submittedAmount": 220,
+                  "paidAmount": 0,
+                  "statusDate": "2022-12-28T19:59:34.827-08:00",
+                  "categoryCodes": [
+                      {
+                          "code": "A0",
+                          "statusCode": "16"
+                      }
+                  ]
+              }
+          }
+      ],
+      "warnings": [],
+      "edi": "ISA*00**00**30*330989922*ZZ*NA*221228*1959*U*00401*045360937*0*T*:~GS*HN*330989922*NA*20221228*1959*45360937*X*004010X093A1~ST*277*0001~BHT*0010*08*45360937*20221228**DG~HL*1**20*1~NM1*PR*2*AETNA DENTAL PLANS*****PI*60054~HL*2*1*21*1~NM1*41*2*SMILE DENTAL CARE*****FI*111223333~HL*3*2*19*1~NM1*1P*1*ROUTSONG*JEFFREY****FI*814595946~HL*4*3*22*1~NM1*IL*1*THOMAS*ROLAND****MI*12121212~HL*5*4*23~DMG*D8*19830613*F~NM1*QC*1*THOMAS*GINNY****MI*12121212~TRN*2*65284845~STC*A0:16*20221228**225*0~SVC*AD:D0180*5*0****1~STC*A0:16*20221228**5~DTP*472*RD8*20210101-20210101~SVC*AD:D0210*220*0****1~STC*A0:16*20221228**220~DTP*472*RD8*20210101-20210101~SE*22*0001~GE*1*45360937~IEA*1*045360937~",
+      "xml": "<ClaimResponse277><TransactionID TransDate=\"12/28/2022\">45360937</TransactionID><ClaimID>65284845</ClaimID><Payer><Name>Aetna Dental Plans</Name><IDCode/><ID>60054</ID><Contact><Type/><Info/><Ext/></Contact></Payer><BillProv><Name><Last>Smile Dental Care</Last><First/><Mid/><Prefix/><Suffix/></Name><Credential><type>TJ</type><value>111223333</value></Credential></BillProv><RendProv><Name><Last>Routsong</Last><First>Jeffrey</First><Mid/><Prefix/><Suffix/></Name><Credential><type>TJ</type><value>814595946</value></Credential></RendProv><Subscriber><isSusbcriberPatient>IL</isSusbcriberPatient><DOB>05/13/1981</DOB><Gender>M</Gender><Name><Last>Thomas</Last><First>Roland</First><Mid/><Prefix/><Suffix/></Name><MemberID><Type>MI</Type><Value>12121212</Value></MemberID></Subscriber><Patient><DOB>06/13/1983</DOB><Gender>F</Gender><Name><Last>Thomas</Last><First>Ginny</First><Mid/><Prefix/><Suffix/></Name><MemberID><Type>MI</Type><Value>12121212</Value></MemberID></Patient><FCN/><DateOfService/><ClaimItems><ClaimItem><LineNum/><ProcedureCode>D0180</ProcedureCode><Quantity>1</Quantity><DateOfService>01/01/2021 - 01/01/2021</DateOfService><CategoryCodes><CategoryCode><RawStatus>A0:16</RawStatus><Code>Acknowledgement/Forwarded-The claim/encounter has been forwarded to another entity.</Code><Status>Claim/encounter has been forwarded to entity.</Status><Entity/></CategoryCode></CategoryCodes><SubmittedAmount>$5.00</SubmittedAmount><StatusDate>12/28/2022</StatusDate><AdjudicationDate/><PaymentMethod/><PaymentDate/><ChequeNum/><Message/></ClaimItem><ClaimItem><LineNum/><ProcedureCode>D0210</ProcedureCode><Quantity>1</Quantity><DateOfService>01/01/2021 - 01/01/2021</DateOfService><CategoryCodes><CategoryCode><RawStatus>A0:16</RawStatus><Code>Acknowledgement/Forwarded-The claim/encounter has been forwarded to another entity.</Code><Status>Claim/encounter has been forwarded to entity.</Status><Entity/></CategoryCode></CategoryCodes><SubmittedAmount>$220.00</SubmittedAmount><StatusDate>12/28/2022</StatusDate><AdjudicationDate/><PaymentMethod/><PaymentDate/><ChequeNum/><Message/></ClaimItem></ClaimItems><ClaimStatus><CategoryCodes><CategoryCode><RawStatus>A0:16</RawStatus><Code>Acknowledgement/Forwarded-The claim/encounter has been forwarded to another entity.</Code><Status>Claim/encounter has been forwarded to entity.</Status><Entity/></CategoryCode></CategoryCodes><SubmittedAmount>$225.00</SubmittedAmount><PaidAmount>$0.00</PaidAmount><StatusDate>12/28/2022</StatusDate><AdjudicationDate/><PaymentMethod/><PaymentDate/><ChequeNum/><Message/></ClaimStatus></ClaimResponse277>"
+  }
+}

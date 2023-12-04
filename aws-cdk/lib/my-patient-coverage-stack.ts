@@ -21,13 +21,19 @@ export class MyPatientCoverage extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    // 👇 This is for creating the dynamodb table
-    const MPCDynamoTableName = cdk.Fn.importValue("MPCDynamoTableName");
-    const MPCDynamoTable = dynamodb.Table.fromTableName(
-      this,
-      "ImportedTable",
-      MPCDynamoTableName
-    );
+    const MPCDynamoTable = new dynamodb.Table(this, 'MyPatientCoverage', {
+      partitionKey: { 
+        // this is going to be unique for everyone. The format will be "justin.com#123344r8wuyhfgoaw87", meaning it will be justin + # + uniqueID
+        name: 'username', 
+        type: dynamodb.AttributeType.STRING 
+      },
+      sortKey: { 
+        name: 'email', 
+        type: dynamodb.AttributeType.STRING 
+      },
+      billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+    });
     
     // 👇 A S3 bucket is basically a normal database.
     const websiteBucket = new s3.Bucket(this, "static-my-patient-coverage", {
@@ -92,9 +98,7 @@ export class MyPatientCoverage extends cdk.Stack {
 
     const puppeteerLayer = new lambda.LayerVersion(this, "puppeteerLayer", {
       compatibleRuntimes: [lambda.Runtime.NODEJS_16_X],
-      code: lambda.Code.fromAsset(
-        path.join(__dirname, "/../src/puppeteerLayer")
-      ),
+      code: lambda.Code.fromAsset(path.join(__dirname, "/../src/puppeteerLayer")),
     });
 
     const deltaLogin = new lambda.Function(this, "delta-login", {
